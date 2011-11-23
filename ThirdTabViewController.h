@@ -7,7 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "VOSearchFavorite.h"
+#import "FBConnect.h"
 
-@interface ThirdTabViewController : UIViewController
+@interface ThirdTabViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIApplicationDelegate, MFMailComposeViewControllerDelegate, FBDialogDelegate>{
+    
+    NSInteger _choosenImageToShare;
+    
+    IBOutlet UIPickerView *picker;
+    IBOutlet UIImageView *imageView;
+    
+    NSArray *_vOSearchFavoriteArray;
+
+    __weak IBOutlet UIBarButtonItem *_saveButtonItem;
+    __weak IBOutlet UIBarButtonItem *_shareButtonItem;
+}
+
+
+- (IBAction)shareButton:(id)sender;
+- (IBAction)saveButton:(id)sender;
+
+- (void) saveImageToCameraRow;
+- (void) tweet:(NSString *)text;
+- (void) email;
+- (void) shareWithFacebook;
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 
 @end

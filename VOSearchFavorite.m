@@ -9,5 +9,10 @@
 #import "VOSearchFavorite.h"
 
 @implementation VOSearchFavorite
+@synthesize imageData;
+@synthesize imageName;
+@synthesize imageSite;
+@synthesize imageURL;
+@synthesize rowAtTableViewCell;
 
 @end

@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate, FBSessionDelegate, FBDialogDelegate>{
+    UIWindow *window;
+    UITabBarController *rootController;
+    Facebook *facebook;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) Facebook *facebook;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITabBarController *rootController;
 
 @end

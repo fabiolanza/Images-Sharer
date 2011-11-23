@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface VOSearchFavorite : NSObject
+@interface VOSearchFavorite : NSObject{
+    NSData *imageData;
+    NSString *imageName;
+    NSString *imageSite;
+    NSString *imageURL;
+    int rowAtTableViewCell;
+}
+
+@property (nonatomic, retain) NSData *imageData;
+@property (nonatomic, retain) NSString *imageName;
+@property (nonatomic, retain) NSString *imageSite;
+@property (nonatomic, retain) NSString *imageURL;
+@property (nonatomic, assign) int rowAtTableViewCell;
 
 @end

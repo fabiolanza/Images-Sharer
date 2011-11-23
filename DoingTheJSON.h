@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DoingTheJSON : NSObject
+@interface DoingTheJSON : NSObject{
+    
+}
+
++ (NSDictionary *) readingJSON:(NSMutableData *)jsonData;
 
 @end

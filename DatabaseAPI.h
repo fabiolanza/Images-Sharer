@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DatabaseAPI : NSObject
+#import "/usr/include/sqlite3.h"
+
+@interface DatabaseAPI : NSObject{
+    NSString *_databasePath;
+    NSString *_plist;
+    sqlite3 *_imagesDB;
+}
+
+- (void)createDatabase;
 
 @end

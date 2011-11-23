@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iAd/iAd.h"
 
-@interface FirstTabViewController : UIViewController
+@interface FirstTabViewController : UIViewController <ADBannerViewDelegate> {
+    ADBannerView *adView;
+    
+    IBOutlet UITextView *brief;
+}
+
+@property(nonatomic, retain) IBOutlet ADBannerView *adView;
 
 @end

@@ -9,5 +9,10 @@
 #import "VOSearch.h"
 
 @implementation VOSearch
+@synthesize name;
+@synthesize uRL;
+@synthesize font;
+@synthesize image;
+@synthesize isFavorite;
 
 @end

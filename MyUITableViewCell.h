@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VOSearch.h"
 
-@interface MyUITableViewCell : UITableViewCell
+@interface MyUITableViewCell : UITableViewCell{
+    UILabel *mainLabel;
+    UILabel *secondLabel;
+    
+    UIImageView *thumb;
+    
+    UIImage *img;
+}
+
+@property(nonatomic, retain) UILabel *mainLabel;
+@property(nonatomic, retain) UILabel *secondLabel;
+@property(nonatomic, retain) UIImage *img;
+
+- (void) setData:(VOSearch *)vOSearch;
 
 @end

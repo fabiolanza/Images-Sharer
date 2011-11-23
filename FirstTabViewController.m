@@ -9,6 +9,7 @@
 #import "FirstTabViewController.h"
 
 @implementation FirstTabViewController
+@synthesize adView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,11 +33,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    adView.delegate = self;
+    
+    adView.hidden = true;
+    
+    brief.text = @"\n\nWelcome to Images Sharer!\n\n1 - Find your images\n\n2 - Select favorite ones\n\n3 - Share with Twitter or Facebook";
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    self.adView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -47,5 +54,20 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+#pragma
+#pragma mark - AdBannerView methods
+
+//- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+//    adView.hidden = true;
+//    NSLog(@"Escondendo bannerView");
+//}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    adView.hidden = false;
+    NSLog(@"Mostrando bannerView");
+}
+
+
 
 @end

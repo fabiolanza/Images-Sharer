@@ -10,4 +10,13 @@
 
 @implementation DoingTheJSON
 
++ (NSDictionary *) readingJSON:(NSMutableData *)jsonData {
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:jsonData
+                          options:kNilOptions error:&error];
+    
+    
+    return json;
+}
+
 @end

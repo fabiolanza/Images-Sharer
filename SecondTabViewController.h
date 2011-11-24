@@ -10,15 +10,19 @@
 #import "WSGoogleImagesAPI.h"
 #import "VOSearch.h"
 #import "VOSearchFavorite.h"
+#import "iAd/iAd.h"
 
-@interface SecondTabViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface SecondTabViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ADBannerViewDelegate>{
+    
+    __weak IBOutlet ADBannerView *adView;
+    __weak IBOutlet UILabel *rateUsOnAppStore;
+    
     NSArray *listData;
     NSMutableArray *imagesArray;
     NSMutableArray *uRLFonts;
     NSMutableArray *uRLNames;
     NSMutableArray *vOSearchArray;
     
-    IBOutlet UILabel *label;
     IBOutlet UIButton *busca;
     IBOutlet UITextField *palavraChave;
     IBOutlet UITableView *myTableView;
@@ -28,7 +32,6 @@
     WSGoogleImagesAPI *_googleAPI;
     
     NSMutableArray *_vOSearchArray;
-    
     NSMutableArray *_vOSearchFavoriteArray;
 
 }
@@ -37,5 +40,6 @@
 
 - (IBAction)getImagesInfo:(id)sender;
 - (IBAction)keyboardReturn:(id)sender;
+- (IBAction)keyboardReturnAfterPushingSearchButton:(id)sender;
 
 @end

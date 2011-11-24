@@ -31,12 +31,18 @@
     myTableView.allowsMultipleSelection = YES;
     
     _vOSearchFavoriteArray = [[NSMutableArray alloc]init];
+    
+    adView.delegate = self;
+    
+    adView.hidden = true;
 
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    adView = nil;
+    rateUsOnAppStore = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -181,12 +187,24 @@
     
     [myTableView reloadData];
     
-    label.text = @"There they are!";
     [waiting stopAnimating];
 }
 
 - (IBAction)keyboardReturn:(id)sender{
     [sender resignFirstResponder];
+}
+
+- (IBAction)keyboardReturnAfterPushingSearchButton:(id)sender{
+    [palavraChave resignFirstResponder];
+}
+
+#pragma
+#pragma mark - AdBannerView methods
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    adView.hidden = false;
+    rateUsOnAppStore.hidden = true;
+    NSLog(@"Showing bannerView at SecondTab");
 }
 
 @end

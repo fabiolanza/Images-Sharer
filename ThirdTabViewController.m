@@ -219,7 +219,7 @@
     
     VOSearchFavorite *vOSearchFavorite = [_vOSearchFavoriteArray objectAtIndex:_choosenImageToShare];
     NSString *favoriteImageLink = vOSearchFavorite.imageURL;
-    NSString *msg = [[NSString alloc]initWithString:@"This photo was shared through Images Sharer iPhone App"];
+    NSString *msg = [[NSString alloc]initWithString:@"This photo was shared through Images Sharer iPhone"];
     NSString *bodyMsg = [NSString stringWithFormat:@"%@\n\n%@", favoriteImageLink, msg];
     
     [controller setMessageBody:bodyMsg isHTML:NO];

@@ -37,7 +37,7 @@
     
     adView.hidden = true;
     
-    brief.text = @"\n\nWelcome to Images Sharer!\n\n1 - Find your images\n\n2 - Select favorite ones\n\n3 - Share with Twitter or Facebook";
+    brief.text = @"\n\nWelcome to Images Sharer!\n\n1 - Find your images\n\n2 - Select favorite ones\n\n3 - Share with your friends\n\n\n\n\n\nRate us on App Store!";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -65,7 +65,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner{
     adView.hidden = false;
-    NSLog(@"Mostrando bannerView");
+    NSLog(@"Showing bannerView at FirstTab");
 }
 
 
